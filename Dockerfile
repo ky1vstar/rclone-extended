@@ -13,7 +13,7 @@ RUN echo "**** Install Dependencies ****" && \
         binutils-gold
 
 RUN echo "**** [Rclone] Download Source Code ****" && \
-    curl -s https://api.github.com/repos/rclone/rclone/releases/latest | \
+    curl -s https://api.github.com/repos/tgdrive/rclone/releases/latest | \
     grep "tarball_url" | \
     cut -d '"' -f 4 | \
     xargs -n1 curl -Ls --output rclone.tar.gz && \
