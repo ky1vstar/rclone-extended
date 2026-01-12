@@ -34,7 +34,7 @@ RUN echo "**** [Rclone] Verify Go Dependencies ****" && \
 
 RUN --mount=type=cache,target=/root/.cache/go-build,sharing=locked \
     echo "**** [Rclone] Build Binary ****" && \
-    make
+    make RELEASE_TAG="$(cat VERSION)"
 
 RUN echo "**** [Rclone] Print Version Binary ****" && \
     ./rclone version
